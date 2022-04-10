@@ -1,13 +1,5 @@
-require("dotenv").config();
-const fs = require("fs");
-const Web3 = require("web3");
-const HDWalletProvider = require("@truffle/hdwallet-provider");
-
-const INFURA_PROJECT_ID = process.env.INFURA_PROJECT_ID;
-
-const infuraURL = `https://rinkeby.infura.io/v3/${INFURA_PROJECT_ID}`;
-const privateKey = fs.readFileSync(".privatekey").toString().trim();
-const web3 = new Web3(new HDWalletProvider(privateKey, infuraURL));
+const { web3, dotenv } = require("./common.js");
+dotenv.config();
 const abi = require("./build/contracts/HackCoinFlip.json").abi;
 
 (async () => {
