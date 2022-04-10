@@ -2,3 +2,8 @@
 */node_modules
 */.privatekey
 */.env
+
+/build
+/node_modules
+.privatekey
+.env
